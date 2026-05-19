@@ -1,6 +1,6 @@
 [build]
-  command = "npm run build"
+  command = "ng build --configuration production"
   publish = "dist/frontend/browser"
 
-[[plugins]]
-  package = "@netlify/angular-runtime"
+[build.environment]
+  API_URL = "https://kordy.runasp.net/api"
