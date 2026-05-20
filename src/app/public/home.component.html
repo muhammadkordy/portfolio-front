@@ -1,153 +1,189 @@
 <!-- ============= HERO ============= -->
 <section class="hero" id="top">
   <div class="grid-bg"></div>
-  <div class="hero-aura"></div>
+  <div class="hero-bg-word" aria-hidden="true">INTELLIGENCE</div>
+  <div class="hero-accents" aria-hidden="true">
+    <span class="ha ha-1"></span>
+    <span class="ha ha-2"></span>
+    <span class="ha ha-3"></span>
+    <div class="ha-corner"></div>
+  </div>
+
   <div class="container hero-grid">
+
     <div class="hero-text">
-      <div class="eyebrow reveal" appReveal>Business Intelligence · Strategy · Insights</div>
-      <h1 class="reveal" appReveal data-delay="1">
-        Muhammad <span class="serif gold">Kordy</span> Moustafa
+      <!-- <div class="hero-logo hero-anim">
+        <img src="logo%202.png" alt="Muhammad Kordy Moustafa — BI Manager" />
+      </div> -->
+
+      <div class="hero-eye-group">
+        <span class="hero-eye-bar"></span>
+        <div class="eyebrow hero-anim">BI MANAGER · CAIRO, EGYPT</div>
+      </div>
+
+      <h1>
+        <span class="h1-wrap"><span class="h1-line hero-anim delay-1">Muhammad Kordy</span></span>
+        <span class="h1-wrap"><span class="h1-line hero-name-second hero-anim delay-2">Moustafa</span></span>
       </h1>
-      <p class="hero-role reveal" appReveal data-delay="2">
-        Manager of Business Intelligence, Market Insights &amp; Corporate Event Planning ·
-        <span class="affil">Egyptian Cotton Hub (ECH) — affiliated with the Egyptian Cabinet</span>
+
+      <div class="hero-role hero-anim delay-3">
+        <span class="role-dash"></span>
+        <span>Manager · Business Intelligence</span>
+      </div>
+
+      <div class="hero-chips hero-anim delay-4">
+        <span class="chip">Business Intelligence</span>
+        <span class="chip">Market Research</span>
+        <span class="chip">Strategy</span>
+        <span class="chip">Executive Reporting</span>
+      </div>
+
+      <p class="hero-value hero-anim delay-5">
+        I build intelligence systems, market studies, and executive-ready reporting that help leadership teams make faster, evidence-based commercial decisions.
       </p>
 
-      <p class="hero-lead serif reveal" appReveal data-delay="3">
-        “Turning data into decisions — for governments, corporates, and industry leaders.”
-      </p>
+      <blockquote class="hero-quote hero-anim delay-6">
+        Turning data into decisions — for institutions, brands, and growth teams.
+      </blockquote>
 
-      <div class="hero-ctas reveal" appReveal data-delay="4">
-        <button class="btn btn--primary" (click)="scrollTo('services')">
-          View My Work <span class="arr"></span>
+      <div class="hero-ctas hero-anim delay-7">
+        <button class="btn btn--primary" (click)="scrollTo('work')">
+          View Selected Work <span class="arr"></span>
         </button>
         <button class="btn btn--ghost" (click)="scrollTo('contact')">
           Contact Me <span class="arr"></span>
         </button>
       </div>
-
-      <div class="hero-meta reveal" appReveal data-delay="5">
-        <div>
-          <span class="hero-meta-k">+10</span>
-          <span class="hero-meta-v">Years leading feasibility &amp; intelligence teams</span>
-        </div>
-        <div class="hero-meta-divider"></div>
-        <div>
-          <span class="hero-meta-k">B2G · B2B · DTC</span>
-          <span class="hero-meta-v">Trusted by ministries, holdings, multinationals</span>
-        </div>
-      </div>
     </div>
 
-    <div class="hero-art reveal" appReveal data-delay="2" aria-hidden="true">
-      <svg viewBox="0 0 480 540" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <linearGradient id="g1" x1="0" x2="1" y1="0" y2="1">
-            <stop offset="0%" stop-color="#1B2F5B" stop-opacity="0.10"/>
-            <stop offset="100%" stop-color="#1B2F5B" stop-opacity="0"/>
-          </linearGradient>
-          <linearGradient id="g2" x1="0" x2="0" y1="0" y2="1">
-            <stop offset="0%" stop-color="#C9A84C" stop-opacity="0.9"/>
-            <stop offset="100%" stop-color="#C9A84C" stop-opacity="0.2"/>
-          </linearGradient>
-        </defs>
-        <!-- card -->
-        <rect x="40" y="40" width="400" height="460" fill="#fff" stroke="#E6E2D8"/>
-        <rect x="40" y="40" width="400" height="460" fill="url(#g1)"/>
-        <!-- axis -->
-        <line x1="80" y1="430" x2="400" y2="430" stroke="#9A9A93" stroke-width="0.8"/>
-        <line x1="80" y1="120" x2="80"  y2="430" stroke="#9A9A93" stroke-width="0.8"/>
-        <!-- bars -->
-        <rect x="100" y="330" width="36" height="100" fill="#1B2F5B" opacity="0.85"/>
-        <rect x="156" y="270" width="36" height="160" fill="#1B2F5B" opacity="0.7"/>
-        <rect x="212" y="220" width="36" height="210" fill="#1B2F5B"/>
-        <rect x="268" y="180" width="36" height="250" fill="#1B2F5B" opacity="0.7"/>
-        <rect x="324" y="150" width="36" height="280" fill="#C9A84C"/>
-        <!-- trendline -->
-        <polyline points="118,360 174,300 230,240 286,200 342,160 380,140" fill="none" stroke="#111" stroke-width="1.3"/>
-        <circle cx="118" cy="360" r="3" fill="#fff" stroke="#111"/>
-        <circle cx="174" cy="300" r="3" fill="#fff" stroke="#111"/>
-        <circle cx="230" cy="240" r="3" fill="#fff" stroke="#111"/>
-        <circle cx="286" cy="200" r="3" fill="#fff" stroke="#111"/>
-        <circle cx="342" cy="160" r="3" fill="#fff" stroke="#111"/>
-        <!-- header label -->
-        <text x="68" y="86" fill="#1B2F5B" font-family="IBM Plex Sans Arabic" font-size="13" letter-spacing="3">EXECUTIVE BRIEF</text>
-        <text x="68" y="106" fill="#111" font-family="IBM Plex Sans Arabic" font-size="17" font-weight="600">ROI Performance — Exhibitions Program</text>
-        <text x="384" y="106" fill="#6B6B6B" font-family="IBM Plex Sans Arabic" font-size="11" text-anchor="end">Q4 2026</text>
-        <!-- highlight ribbon -->
-        <rect x="324" y="140" width="60" height="14" fill="url(#g2)"/>
-        <text x="354" y="151" fill="#111" font-family="IBM Plex Sans Arabic" font-size="10" font-weight="600" text-anchor="middle">486%</text>
-      </svg>
+    <div class="hero-art hero-anim delay-art">
+      <app-hero-chart class="brief-card"></app-hero-chart>
     </div>
+
   </div>
-
   <div class="container scroll-cue">
-    <span class="dot"></span>
+    <span class="scroll-dot"></span>
     <span>Scroll to explore</span>
   </div>
 </section>
 
-<!-- ============= ABOUT ============= -->
-<section class="section" id="about">
-  <div class="container about-grid">
-    <div class="about-side reveal" appReveal>
-      <div class="eyebrow">About</div>
-      <h2 class="about-title">
-        Senior intelligence leadership — at the intersection of <em class="serif">data</em>, <em class="serif">strategy</em>, and <em class="serif">institutional growth</em>.
-      </h2>
-    </div>
-    <div class="about-body reveal" appReveal data-delay="1">
-      <p>
-        Muhammad operates at senior management level inside <strong>Egyptian Cotton Hub (ECH)</strong>, an entity affiliated with the <strong>Egyptian Cabinet</strong>. He leads a multidisciplinary team with <strong>10+ years of experience in feasibility studies</strong>, market research, and corporate development.
-      </p>
-      <p>
-        His expertise spans the full intelligence lifecycle — from <strong>Power BI dashboards</strong> and executive reporting, to <strong>market entry strategies</strong>, <strong>brand establishment</strong>, and the planning of <strong>B2B, DTC, and B2G exhibitions</strong> at national and international scale.
-      </p>
-      <p>
-        He is currently expanding the practice into <strong>automation</strong> and AI-augmented business intelligence — bridging the gap between operational data and boardroom decisions.
-      </p>
-      <ul class="about-list">
-        <li><span class="dot"></span> Power BI ecosystem ownership for senior management</li>
-        <li><span class="dot"></span> Bankable feasibility studies for ministries &amp; holdings</li>
-        <li><span class="dot"></span> Brand &amp; market establishment for global textile leaders</li>
-        <li><span class="dot"></span> End-to-end corporate event &amp; exhibition planning</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- ============= IMPACT NUMBERS ============= -->
+<!-- ============= IMPACT IN NUMBERS ============= -->
 <section class="impact-band" id="impact">
   <div class="container">
     <div class="section-head impact-head reveal" appReveal>
-      <div class="eyebrow">Impact in numbers</div>
-      <h2>Outcomes that move boards, ministries, and balance sheets.</h2>
-      <p class="lead">Live performance from the BI ecosystem Muhammad designs and operates. Every figure below traces back to senior management dashboards at ECH.</p>
+      <div class="eyebrow">Impact in Numbers</div>
+      <h2>Outcomes that inform strategy at every level.</h2>
     </div>
-
     <div class="stats-grid">
-      <div class="stat reveal" appReveal *ngFor="let s of stats(); let i = index" [attr.data-delay]="(i % 4) + 1">
+      <div class="stat reveal" appReveal
+        *ngFor="let s of displayStats(); let i = index"
+        [attr.data-delay]="(i % 6) + 1">
         <div class="stat-value">
           <span appCountUp [target]="parseValue(s.value)" [suffix]="s.suffix || ''">0</span>
         </div>
         <div class="stat-label">{{ s.label }}</div>
       </div>
-      <div class="stat stat-skeleton" *ngIf="loadingStats() && stats().length === 0"></div>
+      <div class="stat stat-skeleton" *ngIf="loadingStats() && displayStats().length === 0"></div>
     </div>
+    <p class="stats-disclaimer reveal" appReveal>
+      Selected figures reflect professional experience and internal reporting workstreams.
+    </p>
   </div>
 </section>
 
-<!-- ============= SERVICES ============= -->
-<section class="section" id="services">
+<!-- ============= ABOUT ============= -->
+<section class="section about-section" id="about">
   <div class="container">
-    <div class="section-head reveal" appReveal>
-      <div class="eyebrow">Services</div>
-      <h2>Built for institutions, calibrated for executives.</h2>
-      <p class="lead">Six core practices, each engineered to translate complexity into clear, defensible decisions. Engagements are scoped privately and delivered with executive-grade discipline.</p>
+
+    <div class="about-statement reveal" appReveal>
+      <div class="eyebrow">About</div>
+      <h2 class="about-h2">
+        At the intersection of intelligence,<br>strategy, and commercial clarity.
+      </h2>
     </div>
 
+    <div class="about-main">
+      <div class="about-manifest reveal" appReveal>
+        <div class="manifest-row">
+          <span class="mk">Current Role</span>
+          <span class="mv">Manager · BI &amp; Market Insights</span>
+        </div>
+        <div class="manifest-row">
+          <span class="mk">Organisation</span>
+          <span class="mv">Egyptian Cotton Hub</span>
+        </div>
+        <div class="manifest-row">
+          <span class="mk">Focus</span>
+          <span class="mv">BI · Market Research · Strategy</span>
+        </div>
+        <div class="manifest-row">
+          <span class="mk">Location</span>
+          <span class="mv">Cairo, Egypt</span>
+        </div>
+        <div class="manifest-row">
+          <span class="mk">Availability</span>
+          <span class="mv mv--avail">Open to selected engagements</span>
+        </div>
+      </div>
+      <div class="about-steps">
+        <div class="about-step reveal step-reveal" appReveal data-delay="1">
+          <div class="ast-num">01</div>
+          <div class="ast-body">
+            <div class="ast-title">Who I Am</div>
+            <p class="ast-text">Muhammad Kordy Moustafa operates at the intersection of business intelligence, market research, and commercial strategy. His work supports executive decision-making across corporate teams, portfolio brands, institutional sales, exhibitions, and growth programs.</p>
+          </div>
+        </div>
+        <div class="about-step reveal step-reveal" appReveal data-delay="2">
+          <div class="ast-num">02</div>
+          <div class="ast-body">
+            <div class="ast-title">How I Work</div>
+            <p class="ast-text">He translates fragmented inputs — market data, performance indicators, field feedback, competitive intelligence, and financial signals — into clear narratives, dashboards, and recommendations for leadership teams.</p>
+          </div>
+        </div>
+        <div class="about-step reveal step-reveal" appReveal data-delay="3">
+          <div class="ast-num">03</div>
+          <div class="ast-body">
+            <div class="ast-title">What I Cover</div>
+            <p class="ast-text">His experience covers BI reporting, market and consumer insights, feasibility studies, competitive intelligence, executive reporting, and end-to-end exhibitions performance evaluation.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="about-specialisms reveal" appReveal data-delay="2">
+      <div class="specialism">
+        <span class="sp-num">01</span>
+        <span class="sp-text">Power BI ecosystem design and monthly maintenance</span>
+      </div>
+      <div class="specialism">
+        <span class="sp-num">02</span>
+        <span class="sp-text">Market research, consumer insights, and feasibility assessments</span>
+      </div>
+      <div class="specialism">
+        <span class="sp-num">03</span>
+        <span class="sp-text">Exhibition strategy, ROI tracking, and post-event analysis</span>
+      </div>
+      <div class="specialism">
+        <span class="sp-num">04</span>
+        <span class="sp-text">Executive reporting and board-ready intelligence briefs</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============= CORE CAPABILITIES ============= -->
+<section class="section" id="capabilities">
+  <div class="container">
+    <div class="section-head reveal" appReveal>
+      <div class="eyebrow">Core Capabilities</div>
+      <h2>Six practices built for institutional decision-making.</h2>
+      <p class="lead">Each practice is calibrated to translate complexity into clear, defensible decisions. Engagements are scoped privately and delivered with executive-grade discipline.</p>
+    </div>
     <div class="services-grid">
-      <article class="service reveal" appReveal *ngFor="let svc of services(); let i = index" [attr.data-delay]="(i % 3) + 1">
+      <article class="service reveal" appReveal
+        *ngFor="let svc of displayCapabilities(); let i = index"
+        [attr.data-delay]="(i % 3) + 1">
         <div class="service-num">{{ (i + 1).toString().padStart(2, '0') }}</div>
         <div class="service-icon">
           <app-icon [name]="svc.icon || 'sparkle'" [size]="40"></app-icon>
@@ -164,7 +200,7 @@
   </div>
 </section>
 
-<!-- ============= SELECTED WORK ============= -->
+<!-- ============= SELECTED WORK / CASE STUDIES ============= -->
 <section class="section work-section" id="work">
   <div class="container">
     <div class="section-head reveal" appReveal>
@@ -172,41 +208,200 @@
       <h2>Programs delivered at institutional scale.</h2>
       <p class="lead">A focused selection of high-impact engagements. Detailed case material is available under NDA upon request.</p>
     </div>
-
     <div class="work-grid">
-      <article class="work-card reveal" appReveal *ngFor="let p of projects(); let i = index" [attr.data-delay]="i + 1">
+      <article class="work-card reveal" appReveal
+        *ngFor="let cs of caseStudies; let i = index"
+        [attr.data-delay]="(i % 3) + 1">
         <div class="work-card-head">
-          <span class="work-tag">Case 0{{ i + 1 }}</span>
-          <span class="work-line"></span>
+          <span class="work-tag">{{ cs.category }}</span>
         </div>
-        <h3 class="work-title">{{ p.title }}</h3>
-        <p class="work-scope">{{ p.scope }}</p>
-        <div class="work-result">
-          <span class="work-result-k">Key Result</span>
-          <span class="work-result-v">{{ p.key_result }}</span>
+        <div class="work-visual" [ngClass]="cs.visual"></div>
+        <h3 class="work-title">{{ cs.title }}</h3>
+        <p class="work-scope">{{ cs.context }}</p>
+        <div class="work-meta">
+          <div class="work-meta-row">
+            <span class="work-meta-k">Role</span>
+            <span class="work-meta-v">{{ cs.role }}</span>
+          </div>
+          <div class="work-meta-row">
+            <span class="work-meta-k">Methods</span>
+            <span class="work-meta-v">{{ cs.methods }}</span>
+          </div>
+          <div class="work-meta-row">
+            <span class="work-meta-k">Output</span>
+            <span class="work-meta-v">{{ cs.output }}</span>
+          </div>
         </div>
       </article>
     </div>
   </div>
 </section>
 
-<!-- ============= CLIENTS ============= -->
-<section class="section clients-section" id="clients">
+<!-- ============= DASHBOARD & REPORT GALLERY ============= -->
+<section class="section gallery-section" id="gallery">
   <div class="container">
     <div class="section-head reveal" appReveal>
-      <div class="eyebrow">Clients &amp; Affiliations</div>
-      <h2>Engaged by entities where outcomes are non-negotiable.</h2>
+      <div class="eyebrow">Dashboard & Report Gallery</div>
+      <h2>Intelligence artifacts — dashboards, reports, and briefs.</h2>
+      <p class="lead">A curated selection of work outputs. Client identities and sensitive data are withheld.</p>
     </div>
 
-    <div class="clients-grid">
-      <div class="client reveal" appReveal *ngFor="let c of clients(); let i = index" [attr.data-delay]="(i % 4) + 1">
-        <div class="client-logo" *ngIf="c.logo_url; else namePlate">
-          <img [src]="c.logo_url" [alt]="c.name + ' logo'" />
+    <div class="gallery-filters reveal" appReveal>
+      <button class="filter-btn"
+        *ngFor="let f of galleryFilters"
+        [class.active]="activeFilter() === f.key"
+        (click)="setFilter(f.key)">
+        {{ f.label }}
+      </button>
+    </div>
+
+    <div class="gallery-grid">
+      <article class="gallery-card reveal" appReveal
+        *ngFor="let item of filteredGalleryItems(); let i = index"
+        [attr.data-delay]="(i % 3) + 1"
+        (click)="openGalleryItem(item)"
+        role="button"
+        [attr.aria-label]="'View ' + item.title">
+        <div class="gallery-preview" [attr.data-type]="item.type">
+          <app-gallery-placeholder [type]="item.type"></app-gallery-placeholder>
+          <div class="gallery-type-chip">{{ item.type }}</div>
         </div>
-        <ng-template #namePlate>
-          <div class="client-nameplate">{{ c.name }}</div>
-        </ng-template>
-        <div class="client-note" *ngIf="c.affiliation_note">{{ c.affiliation_note }}</div>
+        <div class="gallery-info">
+          <div class="gallery-header-row">
+            <h4 class="gallery-title">{{ item.title }}</h4>
+            <span class="gallery-year">{{ item.year }}</span>
+          </div>
+          <p class="gallery-desc">{{ item.description }}</p>
+          <div class="gallery-tags">
+            <span class="gtag" *ngFor="let tag of item.tags">{{ tag }}</span>
+          </div>
+          <div class="gallery-view-hint">
+            <span>View detail</span>
+            <span class="arr"></span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <!-- Gallery Lightbox Modal -->
+  <div class="lightbox-overlay" *ngIf="selectedGalleryItem()" (click)="closeGalleryItem()" role="dialog" aria-modal="true" [attr.aria-label]="selectedGalleryItem()?.title">
+    <div class="lightbox" (click)="$event.stopPropagation()">
+      <button class="lightbox-close" (click)="closeGalleryItem()" aria-label="Close">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+          <line x1="2" y1="2" x2="16" y2="16"/><line x1="16" y1="2" x2="2" y2="16"/>
+        </svg>
+      </button>
+      <div class="lightbox-preview" [attr.data-type]="selectedGalleryItem()?.type">
+        <app-gallery-placeholder [type]="selectedGalleryItem()?.type || 'dashboard'"></app-gallery-placeholder>
+      </div>
+      <div class="lightbox-body">
+        <div class="lightbox-type-chip">{{ selectedGalleryItem()?.type }}</div>
+        <h3 class="lightbox-title">{{ selectedGalleryItem()?.title }}</h3>
+        <p class="lightbox-desc">{{ selectedGalleryItem()?.description }}</p>
+        <div class="lightbox-tags">
+          <span class="gtag" *ngFor="let tag of selectedGalleryItem()?.tags">{{ tag }}</span>
+        </div>
+        <div class="lightbox-meta">
+          <div class="lightbox-meta-row">
+            <span class="lmk">Year</span>
+            <span class="lmv">{{ selectedGalleryItem()?.year }}</span>
+          </div>
+          <div class="lightbox-meta-row">
+            <span class="lmk">Confidentiality</span>
+            <span class="lmv conf-note">{{ selectedGalleryItem()?.confidentiality }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============= INDUSTRIES & BUSINESS DOMAINS ============= -->
+<section class="section industries-section" id="industries">
+  <div class="container">
+    <div class="section-head reveal" appReveal>
+      <div class="eyebrow">Industries & Business Domains</div>
+      <h2>Sectors and disciplines where intelligence work has been applied.</h2>
+    </div>
+    <div class="industries-grid reveal" appReveal data-delay="1">
+      <span class="industry-pill" *ngFor="let ind of industries">{{ ind }}</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============= TOOLS & METHODS ============= -->
+<section class="section tools-section" id="tools">
+  <div class="container tools-layout">
+    <div class="tools-col reveal" appReveal>
+      <div class="eyebrow">Tools</div>
+      <ul class="tools-list">
+        <li class="tool-item" *ngFor="let t of tools">
+          <span class="tool-mark"></span>
+          <span>{{ t }}</span>
+        </li>
+      </ul>
+    </div>
+    <div class="tools-divider"></div>
+    <div class="tools-col reveal" appReveal data-delay="1">
+      <div class="eyebrow">Methods & Approaches</div>
+      <div class="methods-grid">
+        <span class="method-pill" *ngFor="let m of methods">{{ m }}</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============= EXPERIENCE TIMELINE ============= -->
+<section class="section experience-section" id="experience">
+  <div class="container">
+    <div class="section-head reveal" appReveal>
+      <div class="eyebrow">Experience</div>
+      <h2>A focused career building intelligence capabilities.</h2>
+    </div>
+    <div class="exp-list">
+      <div class="exp-item reveal" appReveal
+        *ngFor="let entry of timeline; let i = index"
+        [attr.data-delay]="i + 1"
+        [class.exp-current]="entry.current">
+        <div class="exp-index">{{ (i + 1).toString().padStart(2, '0') }}</div>
+        <div class="exp-body">
+          <div class="exp-row-top">
+            <span class="exp-company">{{ entry.company }}</span>
+            <span class="exp-badge" *ngIf="entry.current">NOW</span>
+            <span class="exp-period" *ngIf="!entry.current">{{ entry.period }}</span>
+          </div>
+          <div class="exp-role">{{ entry.role }}</div>
+          <p class="exp-desc">{{ entry.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============= CERTIFICATIONS ============= -->
+<section class="section certs-section" id="certifications">
+  <div class="container">
+    <div class="section-head reveal" appReveal>
+      <div class="eyebrow">Certifications & Training</div>
+      <h2>Formal recognition across intelligence and strategy disciplines.</h2>
+    </div>
+    <div class="certs-list">
+      <div class="cert-step reveal step-reveal" appReveal
+        *ngFor="let cert of certifications; let i = index"
+        [attr.data-delay]="(i % 6) + 1">
+        <div class="cs-num">{{ (i + 1).toString().padStart(2, '0') }}</div>
+        <div class="cs-body">
+          <div class="cs-title">{{ cert.title }}</div>
+          <div class="cs-issuer" *ngIf="cert.issuer">
+            <span class="cs-issuer-tag">{{ cert.issuer }}</span>
+          </div>
+        </div>
+        <div class="cs-mark">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+        </div>
       </div>
     </div>
   </div>
@@ -215,27 +410,32 @@
 <!-- ============= CONTACT ============= -->
 <section class="section contact-section" id="contact">
   <div class="container contact-grid">
+
     <div class="contact-left reveal" appReveal>
       <div class="eyebrow">Contact</div>
       <h2 class="contact-title">
         Engage with a partner who treats <em class="serif">your data</em> as institutional capital.
       </h2>
       <p class="contact-lead">
-        For ministries, holding companies, multinationals, and investors. Briefings are arranged privately. Expect a response within one business day.
+        For institutions, brands, consulting teams, and growth leaders. Available for selected research, intelligence, reporting, and strategy engagements.
       </p>
       <div class="contact-channels">
         <a href="mailto:muhammadkordy98&#64;gmail.com" class="channel">
           <span class="channel-k">Email</span>
           <span class="channel-v">muhammadkordy98&#64;gmail.com</span>
         </a>
+        <a href="tel:+201000969003" class="channel">
+          <span class="channel-k">Phone</span>
+          <span class="channel-v">+20 100 096 9003</span>
+        </a>
         <a href="https://www.linkedin.com/in/mohammed-kordy-/" target="_blank" rel="noopener" class="channel">
           <span class="channel-k">LinkedIn</span>
           <span class="channel-v">/in/mohammed-kordy-</span>
         </a>
-        <div class="channel">
-          <span class="channel-k">Affiliation</span>
-          <span class="channel-v">Egyptian Cotton Hub · Egyptian Cabinet</span>
-        </div>
+        <a href="https://github.com/muhammadkordy" target="_blank" rel="noopener" class="channel">
+          <span class="channel-k">GitHub</span>
+          <span class="channel-v">github.com/muhammadkordy</span>
+        </a>
       </div>
     </div>
 
@@ -269,10 +469,9 @@
           <textarea id="cf-msg" name="message" [(ngModel)]="form.message" required minlength="10" maxlength="5000" rows="4"></textarea>
           <div class="err" *ngIf="fieldErr('message')">{{ fieldErr('message') }}</div>
         </div>
-
         <div class="form-foot field-wide">
           <button type="submit" class="btn btn--primary" [disabled]="submitting()">
-            <span>{{ submitting() ? 'Submitting…' : 'Send enquiry' }}</span>
+            <span>{{ submitting() ? 'Submitting…' : 'Send Enquiry' }}</span>
             <span class="arr"></span>
           </button>
           <span class="form-note">Submissions are confidential and reviewed personally.</span>
@@ -283,9 +482,10 @@
         <div class="thanks">
           <div class="thanks-mark">✓</div>
           <h3>Enquiry received.</h3>
-          <p>Thank you. Your message has been delivered. Muhammad will respond personally within one business day.</p>
+          <p>Thank you. Your message has been delivered. Expect a personal response within one business day.</p>
         </div>
       </ng-template>
     </div>
+
   </div>
 </section>

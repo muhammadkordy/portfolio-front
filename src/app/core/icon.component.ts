@@ -55,6 +55,12 @@ import { NgSwitch, NgSwitchCase, NgSwitchDefault } from '@angular/common';
           <rect x="14" y="32" width="4" height="4"></rect>
           <rect x="22" y="32" width="4" height="4"></rect>
         </g>
+        <g *ngSwitchCase="'map'">
+          <path d="M18 8 L6 12 V40 L18 36 L30 40 L42 36 V8 L30 12 Z"></path>
+          <path d="M18 8 V36 M30 12 V40"></path>
+          <circle cx="24" cy="22" r="3"></circle>
+          <path d="M24 19 C24 19 19 25 19 28 C19 30.76 21.24 33 24 33 C26.76 33 29 30.76 29 28 C29 25 24 19 24 19 Z" opacity="0.4"></path>
+        </g>
         <g *ngSwitchCase="'sparkle'">
           <path d="M24 6 L26 20 L40 24 L26 28 L24 42 L22 28 L8 24 L22 20 Z"></path>
           <path d="M38 8 L39 12 L43 13 L39 14 L38 18 L37 14 L33 13 L37 12 Z" opacity="0.6"></path>

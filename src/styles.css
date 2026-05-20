@@ -4,24 +4,26 @@
 
 :root {
   /* Brand palette */
-  --bg:           #FAFAF7;          /* near-white warm */
+  --bg:           #F7F5F0;
   --bg-elev:      #FFFFFF;
-  --beige:        #F4EFE6;
-  --beige-soft:   #FAF7F1;
-  --line:         #E6E2D8;
-  --line-soft:    #ECE8DF;
+  --beige:        #F0EDE4;
+  --beige-soft:   #F9F7F2;
+  --line:         #E3DFD5;
+  --line-soft:    #ECEAE2;
   --ink:          #111111;
-  --ink-soft:     #2A2A2A;
+  --ink-soft:     #1E1E1E;
   --muted:        #6B6B6B;
   --muted-2:      #9A9A93;
-  --navy:         #1B2F5B;
-  --navy-soft:    #2A4070;
-  --navy-deep:    #0F1B36;
-  --gold:         #C9A84C;
-  --gold-soft:    #DCC179;
+  --navy:         #0E1B35;
+  --navy-soft:    #1B2F5B;
+  --navy-deep:    #0A1428;
+  --gold:         #C8A96E;
+  --gold-soft:    #D9BC8A;
 
   /* Typography */
-  --font-sans: 'IBM Plex Sans Arabic', 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-sans:  'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-head:  'Helvetica Neue', 'Open Sans', Helvetica, Arial, sans-serif;
+  --font-mono:  'IBM Plex Mono', 'IBM Plex Sans', monospace;
   --font-serif: 'Cormorant Garamond', 'Times New Roman', serif;
 
   /* Layout */
@@ -59,7 +61,7 @@ button { font-family: inherit; cursor: pointer; }
 ::selection { background: var(--navy); color: #fff; }
 
 /* Typography scale */
-h1, h2, h3, h4 { margin: 0; font-weight: 500; letter-spacing: -0.01em; color: var(--ink); }
+h1, h2, h3, h4 { margin: 0; font-weight: 500; letter-spacing: -0.01em; color: var(--ink); font-family: var(--font-head); }
 h1 { font-size: clamp(2.4rem, 5vw, 4.4rem); line-height: 1.05; letter-spacing: -0.025em; font-weight: 400; }
 h2 { font-size: clamp(1.9rem, 3.3vw, 2.75rem); line-height: 1.12; font-weight: 400; }
 h3 { font-size: clamp(1.15rem, 1.6vw, 1.4rem); font-weight: 500; }
@@ -69,10 +71,11 @@ p  { margin: 0; color: var(--ink-soft); }
 
 /* Eyebrow / kicker */
 .eyebrow {
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   letter-spacing: 0.28em;
   text-transform: uppercase;
   color: var(--navy);
+  font-family: var(--font-mono);
   font-weight: 500;
   display: inline-flex;
   align-items: center;
