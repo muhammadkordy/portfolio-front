@@ -81,8 +81,8 @@ import {
     }
 
     .bc {
-      background: #fff;
-      border: 1px solid #E3DFD5;
+      background: #0C1020;
+      border: 1px solid rgba(255,255,255,0.10);
       overflow: hidden;
       position: relative;
       font-family: 'IBM Plex Mono', monospace;
@@ -90,21 +90,22 @@ import {
 
     .bc-top-bar {
       height: 3px;
-      background: #C8A96E;
+      background: linear-gradient(90deg, #E7CF9E, #D8B978, #B8945A);
       transform-origin: left;
       animation: bc-grow-x 0.65s cubic-bezier(0.22, 1, 0.36, 1) 1.0s both;
     }
 
     .bc-header {
-      background: #0E1B35;
+      background: linear-gradient(180deg, #102043, #0B1730);
       padding: 14px 20px 16px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
       animation: bc-slide-down 0.55s cubic-bezier(0.22, 1, 0.36, 1) 1.08s both;
     }
     .bc-eyebrow {
       display: block;
       font-size: 8px;
       letter-spacing: 2.5px;
-      color: #C8A96E;
+      color: #D8B978;
       font-weight: 500;
       text-transform: uppercase;
       margin-bottom: 7px;
@@ -146,48 +147,48 @@ import {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 1px;
-      background: #E3DFD5;
-      border-bottom: 1px solid #E3DFD5;
+      background: rgba(255,255,255,0.07);
+      border-bottom: 1px solid rgba(255,255,255,0.07);
     }
     .bc-kpi {
       display: flex;
       flex-direction: column;
       padding: 14px 16px 16px;
-      background: #F7F5F0;
+      background: #0C1020;
       gap: 3px;
     }
     .bc-kpi--1 { animation: bc-slide-up 0.5s cubic-bezier(0.22, 1, 0.36, 1) 1.20s both; }
     .bc-kpi--2 { animation: bc-slide-up 0.5s cubic-bezier(0.22, 1, 0.36, 1) 1.34s both; }
     .bc-kpi--3 { animation: bc-slide-up 0.5s cubic-bezier(0.22, 1, 0.36, 1) 1.48s both; }
-    .bc-kpi--gold .bc-kv { color: #C8A96E; }
+    .bc-kpi--gold .bc-kv { color: #D8B978; }
     .bc-kk {
       font-size: 7.5px;
       letter-spacing: 1.5px;
-      color: #6B6B6B;
+      color: #8A8FA3;
       text-transform: uppercase;
     }
     .bc-kv {
       font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
       font-size: 26px;
       font-weight: 700;
-      color: #0E1B35;
+      color: #F4F2EC;
       line-height: 1.1;
       letter-spacing: -0.02em;
     }
     .bc-ks {
       font-size: 7px;
-      color: #9A9A93;
+      color: #6E7186;
     }
 
     .bc-chart-region {
       padding: 12px 0 0;
-      background: #fff;
+      background: #090C16;
       animation: bc-fade 0.5s ease 1.60s both;
     }
     .bc-chart-label {
       font-size: 7.5px;
       letter-spacing: 1.3px;
-      color: #9A9A93;
+      color: #6E7186;
       text-transform: uppercase;
       padding: 0 16px 8px;
     }
@@ -201,17 +202,17 @@ import {
       justify-content: space-between;
       align-items: center;
       padding: 10px 16px;
-      border-top: 1px solid #E3DFD5;
-      background: #FAFAF7;
+      border-top: 1px solid rgba(255,255,255,0.07);
+      background: #0A0E1A;
       animation: bc-fade 0.4s ease 1.75s both;
     }
     .bc-footer-name {
       font-size: 7.5px;
-      color: #9A9A93;
+      color: #6E7186;
     }
     .bc-conf {
       font-size: 7.5px;
-      color: #C8A96E;
+      color: #D8B978;
       letter-spacing: 1px;
     }
   `],
@@ -264,11 +265,11 @@ export class HeroChartComponent implements AfterViewInit, OnDestroy {
     const categories = ["Q4'22", "Q4'23", "Q1'24", "Q3'24", "Q4'25"];
     const values     = [35, 55, 72, 88, 100];
     const barColors  = [
-      'rgba(14,27,53,0.28)',
-      'rgba(14,27,53,0.46)',
-      'rgba(14,27,53,0.62)',
-      'rgba(14,27,53,0.80)',
-      '#C8A96E',
+      'rgba(120,140,210,0.30)',
+      'rgba(130,150,225,0.45)',
+      'rgba(140,160,235,0.60)',
+      'rgba(150,170,245,0.78)',
+      '#D8B978',
     ];
 
     return {
@@ -280,13 +281,13 @@ export class HeroChartComponent implements AfterViewInit, OnDestroy {
       xAxis: {
         type: 'category' as const,
         data: categories,
-        axisLine: { lineStyle: { color: '#E3DFD5' } },
+        axisLine: { lineStyle: { color: 'rgba(255,255,255,0.12)' } },
         axisTick: { show: false },
         axisLabel: {
           fontFamily: "'IBM Plex Mono', monospace",
           fontSize: 9,
-          color: '#9A9A93',
-          rich: { last: { color: '#C8A96E', fontWeight: 'bold' } },
+          color: '#8A8FA3',
+          rich: { last: { color: '#D8B978', fontWeight: 'bold' } },
           formatter: (val: string, idx: number) => idx === 4 ? `{last|${val}}` : val,
         },
       },
@@ -294,7 +295,7 @@ export class HeroChartComponent implements AfterViewInit, OnDestroy {
         type: 'value' as const,
         min: 0,
         max: 120,
-        splitLine: { show: true, lineStyle: { color: '#E3DFD5', type: 'dashed' as const } },
+        splitLine: { show: true, lineStyle: { color: 'rgba(255,255,255,0.07)', type: 'dashed' as const } },
         axisLabel: { show: false },
         axisLine:  { show: false },
         axisTick:  { show: false },
@@ -311,10 +312,10 @@ export class HeroChartComponent implements AfterViewInit, OnDestroy {
           type: 'line' as const,
           data: values,
           smooth: false,
-          lineStyle: { color: '#0E1B35', width: 1.8 },
+          lineStyle: { color: '#D8B978', width: 1.8 },
           symbol: 'circle',
           symbolSize: 5,
-          itemStyle: { color: '#fff', borderColor: '#0E1B35', borderWidth: 1.5 },
+          itemStyle: { color: '#0C1020', borderColor: '#D8B978', borderWidth: 1.5 },
           emphasis: { scale: true },
           animationDelay: (idx: number) => idx * 110 + 700,
         },

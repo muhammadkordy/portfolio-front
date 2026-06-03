@@ -1,90 +1,151 @@
 <!-- ============= HERO ============= -->
 <section class="hero" id="top">
-  <div class="grid-bg"></div>
-  <div class="hero-bg-word" aria-hidden="true">INTELLIGENCE</div>
-  <div class="hero-accents" aria-hidden="true">
-    <span class="ha ha-1"></span>
-    <span class="ha ha-2"></span>
-    <span class="ha ha-3"></span>
-    <div class="ha-corner"></div>
+
+  <!-- ── Background ── -->
+  <div class="hero-bg" aria-hidden="true">
+
+    <!-- Universe: star field (3 depth layers) -->
+    <div class="hero-stars"></div>
+
+    <!-- Universe: nebulae -->
+    <div class="hero-nebula hero-nb-1"></div>
+    <div class="hero-nebula hero-nb-2"></div>
+    <div class="hero-nebula hero-nb-3"></div>
+
+    <!-- Universe: shooting stars -->
+    <div class="hero-comets">
+      <span class="hcomet hcomet--1"></span>
+      <span class="hcomet hcomet--2"></span>
+      <span class="hcomet hcomet--3"></span>
+    </div>
+
+    <!-- Orbital rings -->
+    <div class="hero-rings">
+      <span class="hr"></span><span class="hr"></span>
+      <span class="hr"></span><span class="hr"></span>
+    </div>
+
+    <div class="hero-orbs">
+      <span class="orb orb--gold"
+            style="width:640px;height:640px;top:-200px;left:-80px;opacity:.45"
+            [style.transform]="'translate(' + (px() * -22) + 'px,' + (py() * -22) + 'px)'"></span>
+      <span class="orb orb--cool"
+            style="width:560px;height:560px;bottom:-160px;right:-100px;opacity:.42"
+            [style.transform]="'translate(' + (px() * 18) + 'px,' + (py() * 18) + 'px)'"></span>
+      <span class="orb orb--violet"
+            style="width:340px;height:340px;top:35%;right:22%;opacity:.28"></span>
+    </div>
+    <div class="grid-bg"></div>
+    <!-- no scan line -->
+    <div class="hero-veil"></div>
   </div>
 
-  <div class="container hero-grid">
+  <!-- ── Corner meta (Parallel Universe editorial style) ── -->
+  <div class="hero-corner hero-corner--tl hero-anim delay-0" aria-hidden="true">
+    <span class="hc-idx">01</span>
+    <span class="hc-sep">/</span>
+    <span class="hc-label">BI Manager · Cairo, Egypt</span>
+  </div>
+  <div class="hero-corner hero-corner--tr hero-anim delay-0" aria-hidden="true">
+    <span class="hc-label">2026</span>
+    <span class="hc-sep">·</span>
+    <span class="hc-label">MK</span>
+  </div>
 
-    <div class="hero-text">
-      <!-- <div class="hero-logo hero-anim">
-        <img src="logo%202.png" alt="Muhammad Kordy Moustafa — BI Manager" />
-      </div> -->
+  <!-- ── Full-width typographic statement ── -->
+  <div class="hero-stage">
 
-      <div class="hero-eye-group">
-        <span class="hero-eye-bar"></span>
-        <div class="eyebrow hero-anim">BI MANAGER · CAIRO, EGYPT</div>
+    <p class="hero-over hero-anim delay-0">Muhammad Kordy Moustafa</p>
+
+    <h1 class="hero-title">
+      <span class="ht-row"><span class="ht-word ht-word--a">MUHAMMAD</span></span>
+      <span class="ht-row"><span class="ht-word ht-word--b">KORDY</span></span>
+      <span class="ht-row ht-row--c"><span class="ht-word ht-word--c">MOUSTAFA</span></span>
+    </h1>
+
+    <!-- Bottom bar: role + description + CTAs -->
+    <div class="hero-bottom hero-anim delay-4">
+      <div class="hero-bottom-left">
+        <span class="hero-role-pill">
+          <span class="hrp-dot"></span>Manager · Business Intelligence
+        </span>
+        <p class="hero-desc">
+          I build intelligence systems, market studies, and executive-ready reporting that help leadership teams make faster, evidence-based commercial decisions.
+        </p>
       </div>
-
-      <h1>
-        <span class="h1-wrap"><span class="h1-line hero-anim delay-1">Muhammad Kordy</span></span>
-        <span class="h1-wrap"><span class="h1-line hero-name-second hero-anim delay-2">Moustafa</span></span>
-      </h1>
-
-      <div class="hero-role hero-anim delay-3">
-        <span class="role-dash"></span>
-        <span>Manager · Business Intelligence</span>
-      </div>
-
-      <div class="hero-chips hero-anim delay-4">
-        <span class="chip">Business Intelligence</span>
-        <span class="chip">Market Research</span>
-        <span class="chip">Strategy</span>
-        <span class="chip">Executive Reporting</span>
-      </div>
-
-      <p class="hero-value hero-anim delay-5">
-        I build intelligence systems, market studies, and executive-ready reporting that help leadership teams make faster, evidence-based commercial decisions.
-      </p>
-
-      <blockquote class="hero-quote hero-anim delay-6">
-        Turning data into decisions — for institutions, brands, and growth teams.
-      </blockquote>
-
-      <div class="hero-ctas hero-anim delay-7">
-        <button class="btn btn--primary" (click)="scrollTo('work')">
-          View Selected Work <span class="arr"></span>
-        </button>
-        <button class="btn btn--ghost" (click)="scrollTo('contact')">
-          Contact Me <span class="arr"></span>
-        </button>
+      <div class="hero-bottom-right">
+        <div class="hero-ctas">
+          <button class="btn btn--primary" (click)="scrollTo('work')">
+            View Selected Work <span class="arr"></span>
+          </button>
+          <button class="btn btn--ghost" (click)="scrollTo('contact')">
+            Contact Me <span class="arr"></span>
+          </button>
+        </div>
+        <blockquote class="hero-quote">
+          Turning data into decisions — for institutions, brands, and growth teams.
+        </blockquote>
       </div>
     </div>
 
-    <div class="hero-art hero-anim delay-art">
-      <app-hero-chart class="brief-card"></app-hero-chart>
-    </div>
+  </div>
 
+  <!-- ── Marquee ── -->
+  <div class="hero-marquee hero-anim delay-6" aria-hidden="true">
+    <div class="hero-marquee-track">
+      <span class="hm-item">Business Intelligence</span><span class="hm-dot"></span>
+      <span class="hm-item">Market Research</span><span class="hm-dot"></span>
+      <span class="hm-item">Commercial Strategy</span><span class="hm-dot"></span>
+      <span class="hm-item">Executive Reporting</span><span class="hm-dot"></span>
+      <span class="hm-item">Feasibility Studies</span><span class="hm-dot"></span>
+      <span class="hm-item">Power BI</span><span class="hm-dot"></span>
+      <span class="hm-item">Exhibition ROI</span><span class="hm-dot"></span>
+      <span class="hm-item">Consumer Insights</span><span class="hm-dot"></span>
+      <!-- duplicate for seamless loop -->
+      <span class="hm-item">Business Intelligence</span><span class="hm-dot"></span>
+      <span class="hm-item">Market Research</span><span class="hm-dot"></span>
+      <span class="hm-item">Commercial Strategy</span><span class="hm-dot"></span>
+      <span class="hm-item">Executive Reporting</span><span class="hm-dot"></span>
+      <span class="hm-item">Feasibility Studies</span><span class="hm-dot"></span>
+      <span class="hm-item">Power BI</span><span class="hm-dot"></span>
+      <span class="hm-item">Exhibition ROI</span><span class="hm-dot"></span>
+      <span class="hm-item">Consumer Insights</span><span class="hm-dot"></span>
+    </div>
   </div>
-  <div class="container scroll-cue">
-    <span class="scroll-dot"></span>
-    <span>Scroll to explore</span>
+
+  <!-- ── Scroll cue ── -->
+  <div class="scroll-cue hero-anim delay-7">
+    <div class="scroll-line-wrap">
+      <span class="scroll-line-bar"></span>
+    </div>
+    <span>Scroll</span>
   </div>
+
 </section>
 
 <!-- ============= IMPACT IN NUMBERS ============= -->
 <section class="impact-band" id="impact">
   <div class="container">
-    <div class="section-head impact-head reveal" appReveal>
+    <div class="impact-header reveal" appReveal>
       <div class="eyebrow">Impact in Numbers</div>
-      <h2>Outcomes that inform strategy at every level.</h2>
+      <h2 class="impact-title">Outcomes that inform<br>strategy at every level.</h2>
     </div>
-    <div class="stats-grid">
-      <div class="stat reveal" appReveal
-        *ngFor="let s of displayStats(); let i = index"
-        [attr.data-delay]="(i % 6) + 1">
-        <div class="stat-value">
-          <span appCountUp [target]="parseValue(s.value)" [suffix]="s.suffix || ''">0</span>
-        </div>
-        <div class="stat-label">{{ s.label }}</div>
+  </div>
+
+  <div class="impact-strip">
+    <div class="impact-cell reveal reveal--scale" appReveal
+      *ngFor="let s of displayStats(); let i = index"
+      [attr.data-delay]="(i % 6) + 1">
+      <div class="ic-idx">{{ (i + 1).toString().padStart(2, '0') }}</div>
+      <div class="ic-num">
+        <span appCountUp [target]="parseValue(s.value)" [suffix]="s.suffix || ''">0</span>
       </div>
-      <div class="stat stat-skeleton" *ngIf="loadingStats() && displayStats().length === 0"></div>
+      <div class="ic-label">{{ s.label }}</div>
     </div>
+    <div class="impact-cell stat-skeleton" *ngIf="loadingStats() && displayStats().length === 0"></div>
+  </div>
+
+  <div class="container">
     <p class="stats-disclaimer reveal" appReveal>
       Selected figures reflect professional experience and internal reporting workstreams.
     </p>
@@ -93,159 +154,195 @@
 
 <!-- ============= ABOUT ============= -->
 <section class="section about-section" id="about">
+  <div class="about-deco" aria-hidden="true">ABOUT</div>
+  <span class="orb orb--cool" style="width:420px;height:420px;top:0%;right:-100px;opacity:.35" aria-hidden="true"></span>
+
   <div class="container">
 
-    <div class="about-statement reveal" appReveal>
+    <!-- Header -->
+    <div class="about-head reveal" appReveal>
       <div class="eyebrow">About</div>
-      <h2 class="about-h2">
-        At the intersection of intelligence,<br>strategy, and commercial clarity.
-      </h2>
+      <h2 class="about-h2">At the intersection of intelligence,<br>strategy, and commercial clarity.</h2>
     </div>
 
-    <div class="about-main">
-      <div class="about-manifest reveal" appReveal>
-        <div class="manifest-row">
-          <span class="mk">Current Role</span>
-          <span class="mv">Manager · BI &amp; Market Insights</span>
-        </div>
-        <div class="manifest-row">
-          <span class="mk">Organisation</span>
-          <span class="mv">Egyptian Cotton Hub</span>
-        </div>
-        <div class="manifest-row">
-          <span class="mk">Focus</span>
-          <span class="mv">BI · Market Research · Strategy</span>
-        </div>
-        <div class="manifest-row">
-          <span class="mk">Location</span>
-          <span class="mv">Cairo, Egypt</span>
-        </div>
-        <div class="manifest-row">
-          <span class="mk">Availability</span>
-          <span class="mv mv--avail">Open to selected engagements</span>
-        </div>
+    <!-- Manifest: data strip -->
+    <div class="about-manifest reveal" appReveal>
+      <div class="am-row"><span class="am-k">Current Role</span><span class="am-dot"></span><span class="am-v">Manager · BI &amp; Market Insights</span></div>
+      <div class="am-row"><span class="am-k">Organisation</span><span class="am-dot"></span><span class="am-v">Egyptian Cotton Hub</span></div>
+      <div class="am-row"><span class="am-k">Focus</span><span class="am-dot"></span><span class="am-v">BI · Market Research · Strategy</span></div>
+      <div class="am-row"><span class="am-k">Location</span><span class="am-dot"></span><span class="am-v">Cairo, Egypt</span></div>
+      <div class="am-row"><span class="am-k">Availability</span><span class="am-dot"></span><span class="am-v am-avail">Open to selected engagements</span></div>
+    </div>
+
+    <!-- Three pillars -->
+    <div class="about-pillars">
+      <div class="ap-card reveal" appReveal data-delay="1">
+        <div class="ap-n">01</div>
+        <div class="ap-label">Who I Am</div>
+        <p class="ap-text">Muhammad Kordy Moustafa operates at the intersection of business intelligence, market research, and commercial strategy. His work supports executive decision-making across corporate teams, portfolio brands, institutional sales, exhibitions, and growth programs.</p>
       </div>
-      <div class="about-steps">
-        <div class="about-step reveal step-reveal" appReveal data-delay="1">
-          <div class="ast-num">01</div>
-          <div class="ast-body">
-            <div class="ast-title">Who I Am</div>
-            <p class="ast-text">Muhammad Kordy Moustafa operates at the intersection of business intelligence, market research, and commercial strategy. His work supports executive decision-making across corporate teams, portfolio brands, institutional sales, exhibitions, and growth programs.</p>
-          </div>
-        </div>
-        <div class="about-step reveal step-reveal" appReveal data-delay="2">
-          <div class="ast-num">02</div>
-          <div class="ast-body">
-            <div class="ast-title">How I Work</div>
-            <p class="ast-text">He translates fragmented inputs — market data, performance indicators, field feedback, competitive intelligence, and financial signals — into clear narratives, dashboards, and recommendations for leadership teams.</p>
-          </div>
-        </div>
-        <div class="about-step reveal step-reveal" appReveal data-delay="3">
-          <div class="ast-num">03</div>
-          <div class="ast-body">
-            <div class="ast-title">What I Cover</div>
-            <p class="ast-text">His experience covers BI reporting, market and consumer insights, feasibility studies, competitive intelligence, executive reporting, and end-to-end exhibitions performance evaluation.</p>
-          </div>
-        </div>
+      <div class="ap-card reveal" appReveal data-delay="2">
+        <div class="ap-n">02</div>
+        <div class="ap-label">How I Work</div>
+        <p class="ap-text">He translates fragmented inputs — market data, performance indicators, field feedback, competitive intelligence, and financial signals — into clear narratives, dashboards, and recommendations for leadership teams.</p>
+      </div>
+      <div class="ap-card reveal" appReveal data-delay="3">
+        <div class="ap-n">03</div>
+        <div class="ap-label">What I Cover</div>
+        <p class="ap-text">His experience covers BI reporting, market and consumer insights, feasibility studies, competitive intelligence, executive reporting, and end-to-end exhibitions performance evaluation.</p>
       </div>
     </div>
 
-    <div class="about-specialisms reveal" appReveal data-delay="2">
-      <div class="specialism">
-        <span class="sp-num">01</span>
-        <span class="sp-text">Power BI ecosystem design and monthly maintenance</span>
+    <!-- Specialisms: horizontal numbered band -->
+    <div class="about-specialisms">
+      <div class="aspec reveal" appReveal data-delay="1">
+        <span class="aspec-n">01</span>
+        <span class="aspec-t">Power BI ecosystem design and monthly maintenance</span>
       </div>
-      <div class="specialism">
-        <span class="sp-num">02</span>
-        <span class="sp-text">Market research, consumer insights, and feasibility assessments</span>
+      <div class="aspec reveal" appReveal data-delay="2">
+        <span class="aspec-n">02</span>
+        <span class="aspec-t">Market research, consumer insights, and feasibility assessments</span>
       </div>
-      <div class="specialism">
-        <span class="sp-num">03</span>
-        <span class="sp-text">Exhibition strategy, ROI tracking, and post-event analysis</span>
+      <div class="aspec reveal" appReveal data-delay="3">
+        <span class="aspec-n">03</span>
+        <span class="aspec-t">Exhibition strategy, ROI tracking, and post-event analysis</span>
       </div>
-      <div class="specialism">
-        <span class="sp-num">04</span>
-        <span class="sp-text">Executive reporting and board-ready intelligence briefs</span>
+      <div class="aspec reveal" appReveal data-delay="4">
+        <span class="aspec-n">04</span>
+        <span class="aspec-t">Executive reporting and board-ready intelligence briefs</span>
       </div>
     </div>
 
   </div>
 </section>
 
-<!-- ============= CORE CAPABILITIES ============= -->
-<section class="section" id="capabilities">
-  <div class="container">
-    <div class="section-head reveal" appReveal>
-      <div class="eyebrow">Core Capabilities</div>
-      <h2>Six practices built for institutional decision-making.</h2>
-      <p class="lead">Each practice is calibrated to translate complexity into clear, defensible decisions. Engagements are scoped privately and delivered with executive-grade discipline.</p>
-    </div>
-    <div class="services-grid">
-      <article class="service reveal" appReveal
+<!-- ============= CORE CAPABILITIES (Wibify "Four Disciplines" Style) ============= -->
+<section class="section svc-section" id="services">
+  <!-- Animated green glow background -->
+  <div class="svc-bg" aria-hidden="true">
+    <div class="svc-glow"></div>
+    <div class="svc-glow svc-glow--2"></div>
+  </div>
+  <div class="svc-overlay" aria-hidden="true"></div>
+
+  <div class="container svc-inner">
+    <!-- Section header -->
+    <header class="svc-head reveal" appReveal>
+      <p class="svc-eyebrow">
+        <span class="eyebrow-bar" aria-hidden="true"></span>
+        <span class="eyebrow-tag">[03]</span>Services / What I Do
+      </p>
+      <h2 class="svc-title">Six <em>practices.</em> One professional.</h2>
+    </header>
+
+    <!-- Services grid -->
+    <div class="svc-grid">
+      <article class="svc-card reveal reveal--scale" appReveal
         *ngFor="let svc of displayCapabilities(); let i = index"
         [attr.data-delay]="(i % 3) + 1">
-        <div class="service-num">{{ (i + 1).toString().padStart(2, '0') }}</div>
-        <div class="service-icon">
-          <app-icon [name]="svc.icon || 'sparkle'" [size]="40"></app-icon>
+        <span class="svc-card-accent" aria-hidden="true"></span>
+        <span class="svc-card-watermark" aria-hidden="true">{{ (i + 1).toString().padStart(2, '0') }}</span>
+
+        <!-- Icon -->
+        <header class="svc-card-head">
+          <div class="svc-card-icon">
+            <app-icon [name]="svc.icon || 'sparkle'" [size]="28"></app-icon>
+          </div>
+        </header>
+
+        <!-- Body -->
+        <div class="svc-card-body">
+          <h3 class="svc-card-title">{{ svc.title }}</h3>
+          <p class="svc-card-desc">{{ svc.description }}</p>
         </div>
-        <h3 class="service-title">{{ svc.title }}</h3>
-        <p class="service-desc">{{ svc.description }}</p>
-        <div class="service-line"></div>
-        <button class="service-cta" (click)="scrollTo('contact')">
-          <span>Request brief</span>
-          <span class="arr"></span>
+
+        <!-- Tags -->
+        <div class="svc-card-tags">
+          <span class="svc-tag" *ngFor="let tag of $any(svc).tags">
+            <span class="svc-tag-dot" aria-hidden="true"></span>
+            {{ tag }}
+          </span>
+        </div>
+
+        <!-- Arrow -->
+        <button class="svc-card-arrow" (click)="scrollTo('contact')" aria-label="Request brief">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+            <path d="M3 13L13 3M8 3h5v5"/>
+          </svg>
         </button>
       </article>
     </div>
   </div>
 </section>
 
-<!-- ============= SELECTED WORK / CASE STUDIES ============= -->
+<!-- ============= SELECTED WORK (Process / How I Work Style) ============= -->
 <section class="section work-section" id="work">
   <div class="container">
     <div class="section-head reveal" appReveal>
-      <div class="eyebrow">Selected Work</div>
+      <p class="svc-eyebrow">
+        <span class="eyebrow-bar" aria-hidden="true"></span>
+        <span class="eyebrow-tag">[04]</span>Selected Work / Process
+      </p>
       <h2>Programs delivered at institutional scale.</h2>
       <p class="lead">A focused selection of high-impact engagements. Detailed case material is available under NDA upon request.</p>
     </div>
-    <div class="work-grid">
-      <article class="work-card reveal" appReveal
-        *ngFor="let cs of caseStudies; let i = index"
-        [attr.data-delay]="(i % 3) + 1">
-        <div class="work-card-head">
-          <span class="work-tag">{{ cs.category }}</span>
+
+    <!-- Process progress bar -->
+    <div class="process-progress reveal" appReveal aria-hidden="true">
+      <div class="process-progress-track"></div>
+      <div class="process-progress-fill"></div>
+    </div>
+
+    <div class="process-list">
+      <div class="process-item reveal"
+        [ngClass]="i % 2 === 0 ? 'reveal--flip' : 'reveal--flip-alt'"
+        appReveal
+        *ngFor="let cs of caseStudies; let i = index; let last = last"
+        [attr.data-delay]="(i % 4) + 1"
+        [class.process-item--alt]="i % 2 !== 0"
+        [class.process-past]="isWorkPast(i)">
+
+        <!-- Image side -->
+        <div class="process-img-wrap">
+          <div class="process-img-inner">
+            <div class="process-img-placeholder" [attr.data-visual]="cs.visual">
+              <div class="process-img-grid" aria-hidden="true"></div>
+              <div class="process-img-icon">
+                <app-icon [name]="(displayCapabilities()[i]?.icon) || 'sparkle'" [size]="48"></app-icon>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="work-visual" [ngClass]="cs.visual"></div>
-        <h3 class="work-title">{{ cs.title }}</h3>
-        <p class="work-scope">{{ cs.context }}</p>
-        <div class="work-meta">
-          <div class="work-meta-row">
-            <span class="work-meta-k">Role</span>
-            <span class="work-meta-v">{{ cs.role }}</span>
-          </div>
-          <div class="work-meta-row">
-            <span class="work-meta-k">Methods</span>
-            <span class="work-meta-v">{{ cs.methods }}</span>
-          </div>
-          <div class="work-meta-row">
-            <span class="work-meta-k">Output</span>
-            <span class="work-meta-v">{{ cs.output }}</span>
+
+        <!-- Content side -->
+        <div class="process-content">
+          <span class="process-step-num">{{ stepFraction(i, caseStudies.length) }}</span>
+          <h3 class="process-title">{{ cs.title }}</h3>
+          <p class="process-desc">{{ cs.context }}</p>
+          <div class="process-tags">
+            <span class="process-tag" *ngFor="let m of cs.methods.split(' · ')">
+              <span class="process-tag-dot" aria-hidden="true"></span>
+              {{ m }}
+            </span>
           </div>
         </div>
-      </article>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ============= DASHBOARD & REPORT GALLERY ============= -->
+<!-- ============= DASHBOARD & REPORT GALLERY ("What I've Built" List Style) ============= -->
 <section class="section gallery-section" id="gallery">
   <div class="container">
-    <div class="section-head reveal" appReveal>
-      <div class="eyebrow">Dashboard & Report Gallery</div>
-      <h2>Intelligence artifacts — dashboards, reports, and briefs.</h2>
-      <p class="lead">A curated selection of work outputs. Client identities and sensitive data are withheld.</p>
-    </div>
+    <header class="gallery-head reveal" appReveal>
+      <p class="svc-eyebrow">
+        <span class="eyebrow-bar" aria-hidden="true"></span>
+        <span class="eyebrow-tag">[05]</span>Gallery / Intelligence Artifacts
+      </p>
+      <h2 class="gallery-h2">What I've <em>built.</em></h2>
+    </header>
 
+    <!-- Filters -->
     <div class="gallery-filters reveal" appReveal>
       <button class="filter-btn"
         *ngFor="let f of galleryFilters"
@@ -255,32 +352,32 @@
       </button>
     </div>
 
-    <div class="gallery-grid">
-      <article class="gallery-card reveal" appReveal
+    <!-- List -->
+    <ul class="gallery-list">
+      <li class="gallery-row reveal" appReveal
         *ngFor="let item of filteredGalleryItems(); let i = index"
-        [attr.data-delay]="(i % 3) + 1"
+        [attr.data-delay]="(i % 5) + 1"
+        (mouseenter)="onGalleryMouseEnter(item)"
+        (mouseleave)="onGalleryMouseLeave()"
+        (mousemove)="onGalleryMouseMove($event)"
         (click)="openGalleryItem(item)"
         role="button"
         [attr.aria-label]="'View ' + item.title">
-        <div class="gallery-preview" [attr.data-type]="item.type">
-          <app-gallery-placeholder [type]="item.type"></app-gallery-placeholder>
-          <div class="gallery-type-chip">{{ item.type }}</div>
-        </div>
-        <div class="gallery-info">
-          <div class="gallery-header-row">
-            <h4 class="gallery-title">{{ item.title }}</h4>
-            <span class="gallery-year">{{ item.year }}</span>
-          </div>
-          <p class="gallery-desc">{{ item.description }}</p>
-          <div class="gallery-tags">
-            <span class="gtag" *ngFor="let tag of item.tags">{{ tag }}</span>
-          </div>
-          <div class="gallery-view-hint">
-            <span>View detail</span>
-            <span class="arr"></span>
-          </div>
-        </div>
-      </article>
+        <span class="gr-num">{{ (i + 1).toString().padStart(2, '0') }}</span>
+        <h3 class="gr-name">{{ item.title }}</h3>
+        <span class="gr-tag">{{ item.type }}</span>
+        <span class="gr-year">{{ item.year }}</span>
+        <span class="gr-arrow" aria-hidden="true">↗</span>
+      </li>
+    </ul>
+
+    <!-- Cursor-following preview -->
+    <div class="cursor-preview"
+      [class.cursor-preview--visible]="hoveredGalleryItem()"
+      [style.left.px]="galleryPreviewX()"
+      [style.top.px]="galleryPreviewY()"
+      aria-hidden="true">
+      <app-gallery-placeholder [type]="hoveredGalleryItem()?.type || 'dashboard'"></app-gallery-placeholder>
     </div>
   </div>
 
@@ -333,7 +430,7 @@
 <!-- ============= TOOLS & METHODS ============= -->
 <section class="section tools-section" id="tools">
   <div class="container tools-layout">
-    <div class="tools-col reveal" appReveal>
+    <div class="tools-col reveal reveal--left" appReveal>
       <div class="eyebrow">Tools</div>
       <ul class="tools-list">
         <li class="tool-item" *ngFor="let t of tools">
@@ -343,7 +440,7 @@
       </ul>
     </div>
     <div class="tools-divider"></div>
-    <div class="tools-col reveal" appReveal data-delay="1">
+    <div class="tools-col reveal reveal--right" appReveal data-delay="1">
       <div class="eyebrow">Methods & Approaches</div>
       <div class="methods-grid">
         <span class="method-pill" *ngFor="let m of methods">{{ m }}</span>
@@ -360,7 +457,7 @@
       <h2>A focused career building intelligence capabilities.</h2>
     </div>
     <div class="exp-list">
-      <div class="exp-item reveal" appReveal
+      <div class="exp-item reveal reveal--left" appReveal
         *ngFor="let entry of timeline; let i = index"
         [attr.data-delay]="i + 1"
         [class.exp-current]="entry.current">
@@ -387,7 +484,7 @@
       <h2>Formal recognition across intelligence and strategy disciplines.</h2>
     </div>
     <div class="certs-list">
-      <div class="cert-step reveal step-reveal" appReveal
+      <div class="cert-step glass reveal step-reveal" appReveal
         *ngFor="let cert of certifications; let i = index"
         [attr.data-delay]="(i % 6) + 1">
         <div class="cs-num">{{ (i + 1).toString().padStart(2, '0') }}</div>
@@ -409,9 +506,10 @@
 
 <!-- ============= CONTACT ============= -->
 <section class="section contact-section" id="contact">
+  <span class="orb orb--cool" style="width:480px;height:480px;top:-100px;right:-160px;opacity:.4" aria-hidden="true"></span>
   <div class="container contact-grid">
 
-    <div class="contact-left reveal" appReveal>
+    <div class="contact-left reveal reveal--left" appReveal>
       <div class="eyebrow">Contact</div>
       <h2 class="contact-title">
         Engage with a partner who treats <em class="serif">your data</em> as institutional capital.
@@ -439,7 +537,7 @@
       </div>
     </div>
 
-    <div class="contact-right reveal" appReveal data-delay="1">
+    <div class="contact-right glass reveal reveal--right" appReveal data-delay="1">
       <form #f="ngForm" (ngSubmit)="submit(f)" class="contact-form" *ngIf="!submitted(); else thanks" novalidate>
         <div class="field">
           <label for="cf-name">Name</label>

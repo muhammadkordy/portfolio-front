@@ -1,5 +1,5 @@
-import { Component, OnInit, inject, signal, computed, HostListener } from '@angular/core';
-import { NgClass, NgFor, NgIf } from '@angular/common';
+import { Component, OnInit, AfterViewInit, inject, signal, computed, HostListener } from '@angular/core';
+import { NgFor, NgIf, NgClass } from '@angular/common';
 import { FormsModule, NgForm } from '@angular/forms';
 import { ApiService } from '../core/api.service';
 import { Project, Service, Stat } from '../core/models';
@@ -53,11 +53,11 @@ interface Certification {
 
 @Component({
   selector: 'app-home',
-  imports: [NgFor, NgIf, FormsModule, CountUpDirective, RevealDirective, IconComponent, NgClass, HeroChartComponent, GalleryPlaceholderComponent],
+  imports: [NgFor, NgIf, NgClass, FormsModule, CountUpDirective, RevealDirective, IconComponent, GalleryPlaceholderComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, AfterViewInit {
   private api = inject(ApiService);
 
   stats    = signal<Stat[]>([]);
@@ -84,8 +84,22 @@ export class HomeComponent implements OnInit {
     'Other',
   ];
 
+  // Hero mouse-parallax
+  px = signal(0);
+  py = signal(0);
+  private rafPending = false;
+
+  // Work card stacking
+  pastWorkSet = signal<Set<number>>(new Set());
+  isWorkPast(i: number): boolean { return this.pastWorkSet().has(i); }
+
+  ngAfterViewInit(): void { /* reserved */ }
+
   activeFilter        = signal<string>('all');
   selectedGalleryItem = signal<GalleryItem | null>(null);
+  hoveredGalleryItem  = signal<GalleryItem | null>(null);
+  galleryPreviewX     = signal(0);
+  galleryPreviewY     = signal(0);
   filteredGalleryItems = computed(() => {
     const f = this.activeFilter();
     if (f === 'all') return this.galleryItems;
@@ -101,13 +115,13 @@ export class HomeComponent implements OnInit {
     { id: 6, label: 'Research studies managed monthly in high-throughput environment', value: '7', suffix: '+', order: 6, active: true },
   ];
 
-  staticCapabilities: Service[] = [
-    { id: 1, icon: 'chart', title: 'Business Intelligence & Dashboards', description: 'KPI systems, Power BI dashboards, monthly performance reporting, and leadership follow-up.', order: 1, active: true },
-    { id: 2, icon: 'search', title: 'Market Research & Feasibility Studies', description: 'Market sizing, demand assessment, consumer insights, feasibility logic, and decision-ready recommendations.', order: 2, active: true },
-    { id: 3, icon: 'compass', title: 'Competitive & Desk Research', description: 'Competitor mapping, pricing intelligence, benchmark analysis, market structure, and strategic implications.', order: 3, active: true },
-    { id: 4, icon: 'map', title: 'Strategy & Go-to-Market', description: 'Market entry logic, geographic prioritization, channel thinking, brand positioning, and commercial planning.', order: 4, active: true },
-    { id: 5, icon: 'calendar', title: 'Exhibition Strategy & ROI Evaluation', description: 'Annual exhibition calendars, event KPIs, lead tracking, ROI analysis, post-event reporting, and improvement plans.', order: 5, active: true },
-    { id: 6, icon: 'document', title: 'Executive Reporting & Storytelling', description: 'Board-ready narratives, executive briefs, presentation decks, insight summaries, and action plans.', order: 6, active: true },
+  staticCapabilities: (Service & { tags?: string[] })[] = [
+    { id: 1, icon: 'chart', title: 'Business Intelligence & Dashboards', description: 'KPI systems, Power BI dashboards, monthly performance reporting, and leadership follow-up.', order: 1, active: true, tags: ['POWER BI', 'KPI TRACKING', 'DASHBOARDS', 'DAX'] },
+    { id: 2, icon: 'search', title: 'Market Research & Feasibility Studies', description: 'Market sizing, demand assessment, consumer insights, feasibility logic, and decision-ready recommendations.', order: 2, active: true, tags: ['MARKET SIZING', 'CONSUMER INSIGHTS', 'FEASIBILITY'] },
+    { id: 3, icon: 'compass', title: 'Competitive & Desk Research', description: 'Competitor mapping, pricing intelligence, benchmark analysis, market structure, and strategic implications.', order: 3, active: true, tags: ['COMPETITOR MAPPING', 'PRICING INTEL', 'BENCHMARKING'] },
+    { id: 4, icon: 'map', title: 'Strategy & Go-to-Market', description: 'Market entry logic, geographic prioritization, channel thinking, brand positioning, and commercial planning.', order: 4, active: true, tags: ['MARKET ENTRY', 'POSITIONING', 'CHANNEL STRATEGY'] },
+    { id: 5, icon: 'calendar', title: 'Exhibition Strategy & ROI Evaluation', description: 'Annual exhibition calendars, event KPIs, lead tracking, ROI analysis, post-event reporting, and improvement plans.', order: 5, active: true, tags: ['ROI ANALYSIS', 'EVENT KPIs', 'POST-EVENT'] },
+    { id: 6, icon: 'document', title: 'Executive Reporting & Storytelling', description: 'Board-ready narratives, executive briefs, presentation decks, insight summaries, and action plans.', order: 6, active: true, tags: ['BOARD DECKS', 'EXEC BRIEFS', 'STORYTELLING'] },
   ];
 
   displayStats = computed<Stat[]>(() => {
@@ -242,6 +256,10 @@ export class HomeComponent implements OnInit {
   ];
 
   ngOnInit(): void {
+    if (typeof window !== 'undefined') {
+      // Force scroll to top on refresh
+      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    }
     this.api.getStats().subscribe({
       next: (d) => { this.stats.set(d); this.loadingStats.set(false); },
       error: () => this.loadingStats.set(false),
@@ -259,10 +277,39 @@ export class HomeComponent implements OnInit {
   @HostListener('document:keydown.escape')
   onEscape(): void { this.closeGalleryItem(); }
 
+  @HostListener('window:scroll')
+  onWindowScroll(): void {
+    const items = document.querySelectorAll<HTMLElement>('.process-item');
+    if (items.length < 2) return;
+    const past = new Set<number>();
+    const stickyTop = 130; // matches CSS top: 120px + small buffer
+    for (let i = 0; i < items.length - 1; i++) {
+      // When the NEXT card has reached the sticky position, the current card is "behind" it
+      const nextTop = items[i + 1].getBoundingClientRect().top;
+      if (nextTop <= stickyTop) past.add(i);
+    }
+    this.pastWorkSet.set(past);
+  }
+
+  @HostListener('window:mousemove', ['$event'])
+  onMouseMove(e: MouseEvent): void {
+    // Only react near the top of the page (hero region) and throttle to rAF.
+    if (window.scrollY > window.innerHeight) return;
+    if (this.rafPending) return;
+    this.rafPending = true;
+    requestAnimationFrame(() => {
+      const nx = (e.clientX / window.innerWidth - 0.5) * 2;   // -1..1
+      const ny = (e.clientY / window.innerHeight - 0.5) * 2;  // -1..1
+      this.px.set(nx);
+      this.py.set(ny);
+      this.rafPending = false;
+    });
+  }
+
   scrollTo(id: string): void {
     const el = document.getElementById(id);
     if (!el) return;
-    const y = el.getBoundingClientRect().top + window.scrollY - 78 + 1;
+    const y = el.getBoundingClientRect().top + window.scrollY - 20;
     window.scrollTo({ top: y, behavior: 'smooth' });
   }
 
@@ -281,6 +328,21 @@ export class HomeComponent implements OnInit {
   closeGalleryItem(): void {
     this.selectedGalleryItem.set(null);
     document.body.style.overflow = '';
+  }
+
+  onGalleryMouseEnter(item: GalleryItem): void {
+    this.hoveredGalleryItem.set(item);
+  }
+  onGalleryMouseLeave(): void {
+    this.hoveredGalleryItem.set(null);
+  }
+  onGalleryMouseMove(e: MouseEvent): void {
+    this.galleryPreviewX.set(e.clientX);
+    this.galleryPreviewY.set(e.clientY);
+  }
+
+  stepFraction(i: number, total: number): string {
+    return (i + 1).toString().padStart(2, '0') + ' / ' + total.toString().padStart(2, '0');
   }
 
   submit(formRef: NgForm): void {
